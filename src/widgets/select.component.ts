@@ -23,6 +23,7 @@ import { buildTitleMap } from '../library/utilities/index';
         [id]="'control' + layoutNode?._id"
         [name]="controlName"
         (input)="updateValue($event)">
+        <option *ngIf="!isValueInList()" [value]="controlValue" selected="true" disabled="true">{{controlValue}}</option>
         <option *ngFor="let selectItem of selectList"
            [value]="selectItem.value"
            [selected]="selectItem.value === controlValue">{{selectItem.name}}</option>
@@ -54,6 +55,16 @@ export class SelectComponent implements OnInit {
       !!this.options.required
     );
     this.jsf.initializeControl(this);
+  }
+
+  private isValueInList(){
+    let valueInList = false;
+    this.selectList.forEach((option)=>{
+      if(option.value === this.controlValue){
+        valueInList = true;
+      }
+    });
+    return valueInList;
   }
 
   private updateValue(event) {
