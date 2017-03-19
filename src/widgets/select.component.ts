@@ -58,6 +58,7 @@ export class SelectComponent implements OnInit {
   }
 
   private isValueInList(){
+    this.controlValue = this.controlValue || "";
     let valueInList = false;
     this.selectList.forEach((option)=>{
       if(option.value === this.controlValue){
