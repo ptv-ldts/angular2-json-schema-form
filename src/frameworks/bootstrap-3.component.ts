@@ -114,7 +114,6 @@ export class Bootstrap3Component implements OnInit, OnChanges {
   ) { }
 
   ngOnInit() {
-    console.log('here');
     this.initializeControl();
   }
 
