@@ -114,6 +114,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
   ) { }
 
   ngOnInit() {
+    console.log('here');
     this.initializeControl();
   }
 
@@ -296,7 +297,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
 
   private setTitle(): string {
     switch (this.layoutNode.type) {
-      case 'array': case 'button': case 'checkbox': case 'conditional':
+      case 'array': case 'button': case 'conditional':
       case 'fieldset': case 'help': case 'msg': case 'message':
       case 'section': case 'submit': case 'tabarray': case '$ref':
         return null;
