@@ -31,7 +31,7 @@ export class TemplateComponent implements OnInit, OnChanges {
     this.updateComponent();
   }
 
-  private updateComponent() {
+  public updateComponent() {
     if (!this.newComponent && this.layoutNode.options.template) {
       this.newComponent = this.widgetContainer.createComponent(
         this.componentFactory.resolveComponentFactory(this.layoutNode.options.template)

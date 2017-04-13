@@ -68,13 +68,13 @@ import { buildTitleMap } from '../library/utilities/index';
 })
 export class RadiosComponent implements OnInit {
   private formControl: AbstractControl;
-  private controlName: string;
-  private controlValue: any;
-  private controlDisabled: boolean = false;
+  public controlName: string;
+  public controlValue: any;
+  public controlDisabled: boolean = false;
   private boundControl: boolean = false;
-  private options: any;
-  private layoutOrientation: string = 'vertical';
-  private radiosList: any[] = [];
+  public options: any;
+  public layoutOrientation: string = 'vertical';
+  public radiosList: any[] = [];
   @Input() formID: number;
   @Input() layoutNode: any;
   @Input() layoutIndex: number[];
@@ -98,7 +98,7 @@ export class RadiosComponent implements OnInit {
     this.jsf.initializeControl(this);
   }
 
-  private updateValue(event) {
+  public updateValue(event) {
     this.jsf.updateValue(this, event.target.value);
   }
 }

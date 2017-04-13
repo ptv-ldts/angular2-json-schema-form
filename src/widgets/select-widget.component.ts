@@ -31,7 +31,7 @@ export class SelectWidgetComponent implements OnChanges, OnInit {
     this.updateComponent();
   }
 
-  private updateComponent() {
+  public updateComponent() {
     if (!this.newComponent && this.layoutNode.widget) {
       this.newComponent = this.widgetContainer.createComponent(
         this.componentFactory.resolveComponentFactory(this.layoutNode.widget)

@@ -31,7 +31,7 @@ export class SelectFrameworkComponent implements OnChanges, OnInit {
     this.updateComponent();
   }
 
-  private updateComponent() {
+  public updateComponent() {
     if (!this.newComponent && this.jsf.framework) {
       this.newComponent = this.widgetContainer.createComponent(
         this.componentFactory.resolveComponentFactory(this.jsf.framework)

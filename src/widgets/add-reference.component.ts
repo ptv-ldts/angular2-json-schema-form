@@ -17,7 +17,7 @@ import { JsonSchemaFormService } from '../library/json-schema-form.service';
 export class AddReferenceComponent implements OnInit, DoCheck {
   private options: any;
   private itemCount: number;
-  private showAddButton: boolean = true;
+  public showAddButton: boolean = true;
   private previousLayoutIndex: number[];
   private previousDataIndex: number[];
   @Input() formID: number;
