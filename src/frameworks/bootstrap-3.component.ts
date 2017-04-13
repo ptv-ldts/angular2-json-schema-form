@@ -96,13 +96,13 @@ import {
   `],
 })
 export class Bootstrap3Component implements OnInit, OnChanges {
-  private controlInitialized: boolean = false;
-  private options: any; // Options used in this framework
-  private widgetLayoutNode: any; // layoutNode passed to child widget
-  private widgetOptions: any; // Options passed to child widget
-  private layoutPointer: string;
-  private formControl: any = null;
-  private debugOutput: any = '';
+  public controlInitialized: boolean = false;
+  public options: any; // Options used in this framework
+  public widgetLayoutNode: any; // layoutNode passed to child widget
+  public widgetOptions: any; // Options passed to child widget
+  public layoutPointer: string;
+  public formControl: any = null;
+  public debugOutput: any = '';
   @Input() formID: number;
   @Input() layoutNode: any;
   @Input() layoutIndex: number[];
@@ -259,7 +259,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
 
   }
 
-  private updateHelpBlock(value){
+  public updateHelpBlock(value){
     this.options.helpBlock = this.options.description|| this.options.help || false;
     if (this.options.enableErrorState && value === 'INVALID' && this.formControl.errors &&
       ( this.formControl.dirty || this.options.feedbackOnRender )
@@ -274,7 +274,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
     }
   }
 
-  private updateArrayItems() {
+  public updateArrayItems() {
     if (this.layoutNode.arrayItem && this.options.removable &&
       this.dataIndex && this.dataIndex.length
     ) {
@@ -294,7 +294,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
     }
   }
 
-  private setTitle(): string {
+  public setTitle(): string {
     switch (this.layoutNode.type) {
       case 'array': case 'button': case 'conditional':
       case 'fieldset': case 'help': case 'msg': case 'message':
@@ -327,7 +327,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
     }
   }
 
-  private removeItem() {
+  public removeItem() {
     this.jsf.removeItem(this);
   }
 }
