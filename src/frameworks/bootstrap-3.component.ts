@@ -103,6 +103,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
   public layoutPointer: string;
   public formControl: any = null;
   public debugOutput: any = '';
+  public debug: boolean = false;
   @Input() formID: number;
   @Input() layoutNode: any;
   @Input() layoutIndex: number[];
@@ -110,7 +111,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
 
   constructor(
     public changeDetector: ChangeDetectorRef,
-    private jsf: JsonSchemaFormService
+    public jsf: JsonSchemaFormService
   ) { }
 
   ngOnInit() {
