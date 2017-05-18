@@ -196,7 +196,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
         // Button sets - checkboxbuttons and radiobuttons
         case 'checkboxbuttons': case 'radiobuttons':
           this.widgetOptions.htmlClass = addClasses(
-            this.widgetOptions.htmlClass, 'btn-group-vertical-sm');
+            this.widgetOptions.htmlClass, 'btn-group-vertical btn-group-sm');
           this.widgetOptions.itemLabelHtmlClass = addClasses(
             this.widgetOptions.itemLabelHtmlClass, 'btn');
           this.widgetOptions.itemLabelHtmlClass = addClasses(
