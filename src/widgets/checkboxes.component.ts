@@ -12,7 +12,7 @@ import { buildFormGroup, buildTitleMap, JsonPointer } from '../library/utilities
       [class.sr-only]="options?.notitle"
       [innerHTML]="options?.title"></label>
     <div [ngSwitch]="layoutOrientation">
-
+      
       <!-- 'horizontal' = checkboxes-inline or checkboxbuttons -->
       <div *ngSwitchCase="'horizontal'"
         [class]="options?.htmlClass">

@@ -26,9 +26,9 @@ import { JsonSchemaFormService } from '../library/json-schema-form.service';
         [id]="'control' + layoutNode?._id"
         [name]="controlName"
         [readonly]="options?.readonly ? 'readonly' : null"
-        [type]="layoutNode?.type"
-        [value]="controlValue"
-        (input)="updateValue($event)">
+        [type]="layoutNode?.type" 
+        [ngModel]="inputValue" 
+        (ngModelChange)="updateInputValue($event)" />
         <datalist *ngIf="options?.typeahead?.source"
           [id]="'control' + layoutNode?._id + 'Autocomplete'">
           <option *ngFor="let word of options?.typeahead?.source"
@@ -39,7 +39,8 @@ import { JsonSchemaFormService } from '../library/json-schema-form.service';
 export class InputComponent implements OnInit {
   private formControl: AbstractControl;
   public controlName: string;
-  public controlValue: any;
+  private userInput: boolean = true;
+  public  inputValue: string;
   public controlDisabled: boolean = false;
   private boundControl: boolean = false;
   public options: any;
@@ -58,7 +59,20 @@ export class InputComponent implements OnInit {
     this.jsf.initializeControl(this);
   }
 
-  public updateValue(event) {
-    this.jsf.updateValue(this, event.target.value);
+  get controlValue(){
+    return this.inputValue;
+  }
+
+  set controlValue(value: string){
+    this.userInput = false;
+    this.updateInputValue(value);
+    this.userInput = true;
+  }
+
+  public updateInputValue (value: string) {
+    this.inputValue = value;
+    if (this.userInput){
+      this.jsf.updateValue(this, value);
+    }
   }
 }
