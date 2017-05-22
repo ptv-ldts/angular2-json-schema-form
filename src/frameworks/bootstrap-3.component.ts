@@ -18,6 +18,7 @@ import {
   template: `
     <div
       [class]="options?.htmlClass"
+      [class.has-warning]="warning"
       [class.has-feedback]="options?.feedback &&
         options?.isInputWidget && ( formControl?.dirty || options?.feedbackOnRender)"
       [class.has-error]="options?.enableErrorState &&
@@ -104,6 +105,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
   public formControl: any = null;
   public debugOutput: any = '';
   public debug: boolean = false;
+  public warning: boolean = false;
   @Input() formID: number;
   @Input() layoutNode: any;
   @Input() layoutIndex: number[];
@@ -247,6 +249,7 @@ export class Bootstrap3Component implements OnInit, OnChanges {
       if (this.formControl) {
         this.updateHelpBlock(this.formControl.status);
         this.formControl.statusChanges.subscribe(value => this.updateHelpBlock(value));
+        this.formControl['setWarning'] = this.updateWarning.bind(this);
 
         if (this.options.debug) {
           let vars: any[] = [];
@@ -257,7 +260,11 @@ export class Bootstrap3Component implements OnInit, OnChanges {
       }
       this.controlInitialized = true;
     }
+  }
 
+  public updateWarning(value){
+    this.warning = value;
+    this.changeDetector.detectChanges();
   }
 
   public updateHelpBlock(value){

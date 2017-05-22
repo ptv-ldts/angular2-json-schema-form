@@ -55,6 +55,7 @@ export class SelectComponent implements OnInit {
       !!this.options.required
     );
     this.jsf.initializeControl(this);
+    this.jsf.getControl(this)['setWarning'](!this.isValueInList());
   }
 
   public isValueInList(){
@@ -70,5 +71,6 @@ export class SelectComponent implements OnInit {
 
   public updateValue(event) {
     this.jsf.updateValue(this, event.target.value);
+    this.jsf.getControl(this)['setWarning'](!this.isValueInList());
   }
 }
