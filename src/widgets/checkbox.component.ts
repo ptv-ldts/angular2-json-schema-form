@@ -49,6 +49,12 @@ export class CheckboxComponent implements OnInit {
   ngOnInit() {
     this.options = this.layoutNode.options;
     this.jsf.initializeControl(this);
+    if(this.controlValue === 'true'){
+      this.controlValue = true;
+    }
+    if(this.controlValue === 'false'){
+      this.controlValue = false;
+    }
     if (this.controlValue === null || this.controlValue === undefined) {
       this.controlValue = this.options.title;
     }
