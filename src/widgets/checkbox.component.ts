@@ -11,8 +11,8 @@ import { JsonSchemaFormService } from '../library/json-schema-form.service';
       [class]="options?.itemLabelHtmlClass">
       <input
         [attr.aria-describedby]="'control' + layoutNode?._id + 'Status'"
-        [checked]="isChecked ? 'checked' : null"
-        [class]="options?.fieldHtmlClass + (isChecked ?
+        [checked]="this.controlValue ? 'checked' : null"
+        [class]="options?.fieldHtmlClass + (this.controlValue ?
           (' ' + options?.activeClass + ' ' + options?.style?.selected) :
           (' ' + options?.style?.unselected))"
         [disabled]="controlDisabled"
@@ -36,6 +36,7 @@ export class CheckboxComponent implements OnInit {
   public options: any;
   public trueValue: any = true;
   public falseValue: any = false;
+  public checked: boolean = false;
   @Input() formID: number;
   @Input() layoutNode: any;
   @Input() layoutIndex: number[];
@@ -55,6 +56,7 @@ export class CheckboxComponent implements OnInit {
 
   public updateValue(event) {
     event.preventDefault();
+    this.checked = event.target.checked ? this.trueValue : this.falseValue;
     this.jsf.updateValue(this, event.target.checked ? this.trueValue : this.falseValue);
   }
 
