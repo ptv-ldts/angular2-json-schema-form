@@ -21,7 +21,7 @@ import { JsonSchemaFormService } from '../library/json-schema-form.service';
           [layout]="layoutNode.items"
           [dataIndex]="dataIndex"
           [layoutIndex]="layoutIndex"
-          [isOrderable]="options?.orderable"></root-widget>
+          [isOrderable]="false"></root-widget>
 
     </fieldset>`,
   styles: [`

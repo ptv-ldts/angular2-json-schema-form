@@ -58,11 +58,11 @@ export class SelectComponent implements OnInit {
     this.jsf.getControl(this)['setWarning'](!this.isValueInList());
   }
 
-  public isValueInList(){
-    this.controlValue = this.controlValue || "";
+  public isValueInList() {
+    this.controlValue = this.controlValue || '';
     let valueInList = false;
-    this.selectList.forEach((option)=>{
-      if(option.value === this.controlValue){
+    this.selectList.forEach((option) => {
+      if (option.value === this.controlValue) {
         valueInList = true;
       }
     });
