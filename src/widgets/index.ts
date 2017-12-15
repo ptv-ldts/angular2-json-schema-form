@@ -20,6 +20,7 @@ import { TabComponent } from './tab.component';
 import { TabsComponent } from './tabs.component';
 import { TemplateComponent } from './template.component';
 import { TextareaComponent } from './textarea.component';
+import {MultiSelectComponent} from "./multiselect.component";
 
 export const ALL_WIDGETS = [
   AddReferenceComponent, ButtonComponent, CheckboxComponent,
@@ -27,5 +28,5 @@ export const ALL_WIDGETS = [
   InputComponent, MessageComponent, NoneComponent, NumberComponent,
   RadiosComponent, RootComponent, SectionComponent, SelectComponent,
   SelectFrameworkComponent, SelectWidgetComponent, SubmitComponent,
-  TabComponent, TabsComponent, TemplateComponent, TextareaComponent
+  TabComponent, TabsComponent, TemplateComponent, TextareaComponent, MultiSelectComponent
 ];

@@ -267,8 +267,8 @@ export class Bootstrap3Component implements OnInit, OnChanges {
     this.changeDetector.detectChanges();
   }
 
-  public updateHelpBlock(value){
-    this.options.helpBlock = this.options.description|| this.options.help || false;
+  public updateHelpBlock(value) {
+    this.options.helpBlock = this.options.description || this.options.help || false;
     if (this.options.enableErrorState && value === 'INVALID' && this.formControl.errors &&
       ( this.formControl.dirty || this.options.feedbackOnRender )
     ) {

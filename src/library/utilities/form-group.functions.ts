@@ -415,7 +415,7 @@ export function formatFormData(
  * @param {boolean = false} returnGroup - If true, return group containing control
  * @return {group} - Located value (or true or false, if returnError = true)
  */
-export function getControl(
+export function getControl (
   formGroup: any, dataPointer: Pointer, returnGroup: boolean = false
 ): any {
   const dataPointerArray: string[] = JsonPointer.parse(dataPointer);

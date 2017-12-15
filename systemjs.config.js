@@ -17,6 +17,7 @@
       '@angular/forms':             'npm:@angular/forms/bundles/forms.umd.js',
       'rxjs':                       'npm:rxjs',
       'angular-in-memory-web-api':  'npm:angular-in-memory-web-api',
+      'angular2-multiselect-dropdown/angular2-multiselect-dropdown':'npm:angular2-multiselect-dropdown/angular2-multiselect-dropdown.umd.js',
       // other libraries
       'ajv':                        'npm:ajv/dist/ajv.min.js',
       'base64-js':                  'npm:base64-js/base64js.min.js',

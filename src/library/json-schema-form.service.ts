@@ -377,6 +377,24 @@ export class JsonSchemaFormService {
     }
   }
 
+  public updateMultiSelectionArray(ctx: any, multiselection: string[]): void {
+    let formArray = <FormArray>this.getControl(ctx);
+
+    // Remove all existing items
+    while (formArray.value.length) { formArray.removeAt(0); }
+
+    // Re-add an item for each checked box
+    for (let selection of multiselection) {
+        let newFormControl = buildFormGroup(JsonPointer.get(
+          this.templateRefLibrary, [ctx.layoutNode.dataPointer + '/-']
+        ));
+        newFormControl.setValue(selection);
+        formArray.push(newFormControl);
+    }
+    formArray.markAsDirty();
+  }
+
+
   public updateArrayCheckboxList(ctx: any, checkboxList: CheckboxItem[]): void {
     let formArray = <FormArray>this.getControl(ctx);
 

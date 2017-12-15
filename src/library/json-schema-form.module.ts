@@ -11,6 +11,7 @@ import { ALL_WIDGETS } from '../widgets/index';
 import { FrameworkLibraryService } from '../frameworks/framework-library.service';
 import { WidgetLibraryService } from '../widgets/widget-library.service';
 import { JsonSchemaFormService } from './json-schema-form.service';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
 
 import 'ajv';
 import 'lodash';
@@ -28,7 +29,7 @@ const ALL_COMPONENTS = [
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, ReactiveFormsModule,
+    CommonModule, FormsModule, ReactiveFormsModule, AngularMultiSelectModule
   ],
   declarations: [
     JsonSchemaFormComponent, OrderableDirective, ...ALL_COMPONENTS,
