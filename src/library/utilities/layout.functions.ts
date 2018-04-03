@@ -451,7 +451,7 @@ export function buildLayoutFromSchema(
       } else {
         newNode.listItems = false;
       }
-      newNode.items = _.filter(_.map(schema.items, (item: any, i) => {
+      newNode.items = _.filter(_.map(schema.items, (item: any, i: any) => {
         return buildLayoutFromSchema(
           jsf, widgetLibrary,
           newNode.layoutPointer + '/items/-',
