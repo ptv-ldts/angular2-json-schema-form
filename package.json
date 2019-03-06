@@ -50,10 +50,10 @@
     "@angular/material": "2.0.0-beta.2",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
-    "@types/lodash": "4.x",
+    "@types/lodash": "4.14.55",
     "ajv": "4.x",
     "angular2-multiselect-dropdown": "^2.1.4",
-    "lodash": "4.14.55"
+    "lodash": "4.x"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^4.0.0",
